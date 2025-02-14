@@ -1,15 +1,26 @@
-let firstVariable;
-let secondVariable = 20;
+let PI = 3.14;
+let firstLetter = 'A';
+let loggedIn = false;
+let emptyVar;
+let emptyVar2 = null;
 
-const PI = 3.14;
+let arr = [1, 2, 'hello', 5, false, null, undefined, [1, 2, 34]];
 
-console.log(thirdVariable);
-var thirdVariable = 30;
+let person = {
+    age: 18,
+    name: 'John',
+    isStudent: true,
+    favoriteColors: ['red', 'blue'],
+};
 
-// console.log(firstVariable * PI);
+let firstName = 'John';
+let lastName = 'Doe';
 
-firstVariable = 1000;
+let fullName = firstName + ' ' + lastName;
 
-console.log(firstVariable);
+console.log(10 + firstName); // 10John
+console.log(10 - firstName); // NaN - Not A Number
 
-// alert('Hello World!');
+const greeting = `Good morning, ${firstName} ${lastName}!`;
+
+console.log(greeting);
