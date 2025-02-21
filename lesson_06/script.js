@@ -3,7 +3,7 @@ let count = 0
 while (count < 5) {
     console.log(count)
 
-    // count += 1 // count = count + 1 - 5 U*
+    // count += 1 // count = count + 1
     count++
 }
 
