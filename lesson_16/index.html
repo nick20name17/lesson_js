@@ -10,12 +10,24 @@
 
 <body>
 
-    <form class="form">
+    <form class="form" autocomplete="off">
         <div class="input-group">
             <input class="input" type="text" id="task" placeholder="Do a homework...">
             <button class="submit-btn" type="submit">Submit</button>
         </div>
     </form>
+
+    <ul class="filters-list">
+        <li class="filter-item">
+            <button id="all" class="filter-btn">All</button>
+        </li>
+        <li class="filter-item">
+            <button id="completed" class="filter-btn">Completed</button>
+        </li>
+        <li class="filter-item">
+            <button id="not-completed" class="filter-btn">Not Completed</button>
+        </li>
+    </ul>
 
     <ul class="tast-list">
 

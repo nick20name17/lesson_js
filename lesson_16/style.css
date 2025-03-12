@@ -9,8 +9,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 40px;
     height: 100vh;
+    font-family: sans-serif;
 }
 
 .form {
@@ -51,12 +51,18 @@ body {
 }
 
 .tast-list {
+    margin-top: 12px;
     width: 400px;
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
+
+input[type='checkbox'] {
+    accent-color: tomato;
+}
+
 .task-item {
     display: flex;
     align-items: center;
@@ -66,7 +72,17 @@ body {
     padding: 12px;
     border-radius: 8px;
     color: hotpink;
+    transition: opacity 0.3 ease-in-out;
 }
+
+.completed {
+    opacity: 0.5;
+}
+
+.completed span {
+    text-decoration: line-through;
+}
+
 .delete-btn {
     background-color: hotpink;
     border: none;
@@ -81,4 +97,45 @@ body {
 
 .delete-btn:hover {
     background-color: tomato;
+}
+
+.empty-message {
+    text-align: center;
+    background-color: rgba(255, 233, 244, 0.75);
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    color: hotpink;
+}
+
+.filters-list {
+    margin-top: 24px;
+    list-style-type: none;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.filter-item {
+    height: 100%;
+}
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 99, 71, 0.1);
+    color: tomato;
+    font-size: 12px;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    padding: 6px 12px;
+}
+
+.active {
+    background-color: tomato;
+    color: aliceblue;
 }
