@@ -1,11 +1,20 @@
 const form = document.querySelector('.form')
 const taskInput = document.querySelector('#task')
 const tasksList = document.querySelector('.tast-list')
-
 const filterButtons = document.querySelectorAll('.filter-btn')
 
 let tasks = []
 let filter = 'all'
+
+function getFilteredTasks() {
+    if (filter === 'completed') {
+        return tasks.filter((task) => task.completed)
+    } else if (filter === 'not-completed') {
+        return tasks.filter((task) => !task.completed)
+    } else {
+        return tasks
+    }
+}
 
 filterButtons.forEach((filterButton) => {
     filterButton.addEventListener('click', () => {
@@ -15,6 +24,8 @@ filterButtons.forEach((filterButton) => {
         filterButton.classList.add('active')
 
         filter = filterButton.id
+
+        renderTasks()
     })
 })
 
@@ -30,9 +41,8 @@ function showEmptyMessage(show) {
 function renderTasks() {
     tasksList.innerHTML = ''
 
-    showEmptyMessage(tasks.length === 0)
-
-    const filteredTasks = tasks.filter((task) => task.completed === false)
+    const filteredTasks = getFilteredTasks()
+    showEmptyMessage(filteredTasks.length === 0)
 
     filteredTasks.forEach((task) => {
         const checkbox = document.createElement('input')
@@ -90,12 +100,6 @@ function toggleCompleted(taskId) {
     })
 
     if (task) {
-        // if (task.completed) {
-        //     task.completed = false
-        // } else {
-        //     task.completed = true
-        // }
-
         task.completed = !task.completed
 
         renderTasks()
