@@ -1,3 +1,19 @@
+:root {
+    --bg-clr: #fff;
+    --accent-clr: hotpink;
+    --secondary-clr: rgba(255, 233, 244);
+    --input-clr: white;
+    --li-clr: rgba(255, 233, 244, 0.75);
+}
+
+.dark {
+    --bg-clr: rgb(22, 1, 11);
+    --accent-clr: hotpink;
+    --input-clr: rgba(255, 233, 244, 0.75);
+    --secondary-clr: rgb(22, 1, 11);
+    --li-clr: rgba(255, 233, 244, 0.1);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -11,6 +27,7 @@ body {
     flex-direction: column;
     height: 100vh;
     font-family: sans-serif;
+    background-color: var(--bg-clr);
 }
 
 .form {
@@ -32,16 +49,21 @@ body {
     border-radius: 8px 0px 0px 8px;
     border: 1px solid black;
     border-right: none;
+    background-color: var(--input-clr);
     outline: none;
 }
 
+.input::placeholder {
+    color: var(--secondary-clr);
+}
+
 .submit-btn {
-    background-color: hotpink;
+    background-color: var(--accent-clr);
     border: none;
     border-radius: 0px 8px 8px 0px;
     transition: all 0.3s ease;
     cursor: pointer;
-    color: aliceblue;
+    color: var(--secondary-clr);
     width: 120px;
     height: 100%;
 }
@@ -68,10 +90,10 @@ input[type='checkbox'] {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: rgba(255, 233, 244, 0.75);
+    background-color: var(--li-clr);
     padding: 12px;
     border-radius: 8px;
-    color: hotpink;
+    color: var(--accent-clr);
     transition: opacity 0.3 ease-in-out;
 }
 
@@ -84,12 +106,12 @@ input[type='checkbox'] {
 }
 
 .delete-btn {
-    background-color: hotpink;
+    background-color: var(--accent-clr);
     border: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     cursor: pointer;
-    color: aliceblue;
+    color: var(--secondary-clr);
     width: 60px;
     font-size: 14px;
     height: 24px;
@@ -101,11 +123,11 @@ input[type='checkbox'] {
 
 .empty-message {
     text-align: center;
-    background-color: rgba(255, 233, 244, 0.75);
+    background-color: var(--li-clr);
     width: 100%;
     padding: 12px;
     border-radius: 8px;
-    color: hotpink;
+    color: var(--accent-clr);
 }
 
 .filters-list {
@@ -137,5 +159,23 @@ input[type='checkbox'] {
 
 .active {
     background-color: tomato;
-    color: aliceblue;
+    color: var(--secondary-clr);
+}
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 99, 71, 0.1);
+    border: none;
+    color: tomato;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 6px 12px;
+
+    position: absolute;
+    top: 40px;
+    right: 40px;
 }

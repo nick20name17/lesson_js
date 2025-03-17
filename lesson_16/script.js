@@ -3,8 +3,53 @@ const taskInput = document.querySelector('#task')
 const tasksList = document.querySelector('.tast-list')
 const filterButtons = document.querySelectorAll('.filter-btn')
 
+const themeBtn = document.querySelector('.theme-btn')
+
+function setTheme(isDark) {
+    if (isDark) {
+        document.body.classList.add('dark')
+        themeBtn.textContent = 'Light'
+    } else {
+        document.body.classList.remove('dark')
+        themeBtn.textContent = 'Dark'
+    }
+
+    localStorage.setItem('darkTheme', isDark)
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('darkTheme')
+
+    if (savedTheme) {
+        setTheme(savedTheme === 'true')
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        setTheme(prefersDark)
+    }
+})
+
+themeBtn.addEventListener('click', () => {
+    const savedTheme = localStorage.getItem('darkTheme')
+    setTheme(savedTheme === 'false')
+})
+
 let tasks = []
 let filter = 'all'
+
+function loadTasks() {
+    const storageTasks = localStorage.getItem('tasks')
+
+    if (storageTasks) {
+        tasks = JSON.parse(storageTasks)
+    }
+}
+
+loadTasks()
+
+function saveTasks() {
+    const stringifiedTasks = JSON.stringify(tasks)
+    localStorage.setItem('tasks', stringifiedTasks)
+}
 
 function getFilteredTasks() {
     if (filter === 'completed') {
@@ -79,18 +124,20 @@ renderTasks()
 
 function addTask(text) {
     const newTask = {
-        id: tasks.length + 1,
+        id: Math.floor(Math.random() * 1000),
         text,
         completed: false,
     }
 
     tasks.push(newTask)
 
+    saveTasks()
     renderTasks()
 }
 
 function deleteTask(taskId) {
     tasks = tasks.filter((task) => task.id !== taskId)
+    saveTasks()
     renderTasks()
 }
 
@@ -103,6 +150,7 @@ function toggleCompleted(taskId) {
         task.completed = !task.completed
 
         renderTasks()
+        saveTasks()
     }
 }
 
