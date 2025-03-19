@@ -1,21 +1,57 @@
-const PI = Math.PI
-const e = Math.E
+const userName = document.querySelector('.name')
+const userEmail = document.querySelector('.email')
+const avatar = document.querySelector('.avatar')
 
-console.log(Math.max(1, 2, 3, 4, 5, 6))
-console.log(Math.min(4, 5, 2, 4, 5, 6))
+const email = 'test'
 
-console.log(Math.floor(Math.random() * 2))
+const user = {
+    id: 1,
+    firstName: 'John',
+    secondName: undefined,
+    email: 'john@email.com',
+    initials: 'J.D.',
+    age: 12,
+    isStudent: false,
+}
 
-console.log(Math.round(3.55))
-console.log(Math.ceil(5.05))
+const { email: myEmail, firstName, secondName = '-', initials, age } = user
 
-const price = 92.5
-const discount = 7
+userName.textContent = firstName + ' ' + secondName
+userEmail.textContent = myEmail
+avatar.textContent = initials
 
-const priceWithDiscount = price * (discount / 100)
+const adminUser = {
+    id: 2,
+    firstName: 'John',
+    secondName: 'Doe',
+    email: 'john@email.com',
+    initials: 'J.D.',
+    role: 'admin',
+    age: 12,
+    isStudent: false,
+}
 
-console.log(priceWithDiscount)
-console.log(priceWithDiscount.toFixed(2))
+const { role, ...justUser } = adminUser
 
-console.log(Math.sqrt(9))
-console.log(Math.pow(2, 10))
+if (role) {
+    console.log(role)
+}
+
+const fruits = ['banana', 'orange', 'grape']
+
+const [first, ...other] = fruits
+
+console.log(other)
+
+let x = 5
+let y = 10
+
+;[x, y] = [y, x]
+
+function showUser({ firstName, secondName = '', age, email }) {
+    const userInfo = `Full name: ${firstName} ${secondName}, age: ${age}, email: ${email}`
+
+    document.body.textContent = userInfo
+}
+
+showUser(user)

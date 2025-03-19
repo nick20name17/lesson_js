@@ -5,13 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS 12</title>
+
+
+    <style>
+        body {
+            font-family: sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(179, 179, 179);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: aliceblue;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .name {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .email {
+            font-size: 12px;
+            color: grey;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <div class="user">
+        <div class="avatar"></div>
+        <div class="info">
+            <span class="name"></span>
+            <span class="email"> </span>
+        </div>
+    </div>
 
     <script src="script.js">
 
