@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css">
+  <title>Lesson 20</title>
+</head>
+
+<body>
+
+
+  <section>
+    <h2>Tooltip</h2>
+
+    <div>
+      <div class="tooltip">
+        <button class="tooltip-trigger">Hover</button>
+        <div class="tooltip-content">Add to library</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Accordion</h2>
+
+    <div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div>
+            <button class="accordion-trigger">
+              <span>
+                Is it accessible?
+              </span>
+              <span class="icon"></span>
+            </button>
+
+          </div>
+          <div class="accordion-content">Yes. It adheres to the WAI-ARIA design pattern.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>Is it styled?</span>
+            <span class="icon"></span>
+          </button>
+          <div class="accordion-content">Yes. It comes with default styles that matches the other components' aesthetic.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tabs</h2>
+
+    <div>
+      <div class="tabs">
+        <div class="tabs-button">
+          <button class="tab-button active-btn">First</button>
+          <button class="tab-button">Second</button>
+        </div>
+        <div class="tabs-content">
+          <div class="tab-content active-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quia.
+          </div>
+          <div class="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, nam accusantium
+            aperiam eum aliquid et?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

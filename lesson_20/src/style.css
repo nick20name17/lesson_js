@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    padding: 100px;
+}
+
+section {
+    margin-top: 100px;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid black;
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+}
+
+section:first-child {
+    margin-top: 0;
+}
+
+h2 {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip-trigger {
+    padding: 8px 16px;
+    background-color: hotpink;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+}
+.tooltip-content {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    min-width: 100px;
+    visibility: hidden;
+    background-color: black;
+    color: whitesmoke;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease-in;
+}
+
+.left {
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(100% + 6px);
+}
+
+.right {
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 6px);
+}
+
+.bottom {
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top {
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.accordion {
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-trigger {
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.accordion-trigger:hover {
+    background-color: #f7fafc;
+}
+
+.accordion-trigger .icon {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+}
+
+.accordion-trigger .icon::before,
+.accordion-trigger .icon::after {
+    content: '';
+    position: absolute;
+    background-color: #4a5568;
+    transition: transform 0.3s ease;
+}
+
+.accordion-trigger .icon::before {
+    top: 5px;
+    left: 0;
+    width: 12px;
+    height: 2px;
+}
+
+.accordion-trigger .icon::after {
+    top: 0;
+    left: 5px;
+    width: 2px;
+    height: 12px;
+}
+
+.accordion-trigger.active .icon::after {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+}
+
+.active {
+    padding: 1rem 1.25rem;
+    max-height: 200px;
+}
+
+.tabs {
+    width: 400px;
+}
+.tabs-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px;
+    background-color: cadetblue;
+    border-radius: 8px;
+}
+.tab-button {
+    padding: 8px 16px;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+}
+
+.active-btn {
+    background-color: tomato;
+}
+
+.tabs-content {
+    margin-top: 10px;
+    padding: 4px;
+    transition: all 0.3s ease;
+}
+.tab-content {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.active-content {
+    opacity: 1;
+    visibility: visible;
+}
