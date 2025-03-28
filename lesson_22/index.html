@@ -9,42 +9,44 @@
     <link href="./src/style.css" rel="stylesheet" />
 </head>
 
-<body class="flex h-screen items-center justify-center ">
+<body class="flex h-screen items-center justify-center gap-5 flex-col ">
     <div class="flex items-center gap-4 tabular-nums">
         <div class="flex flex-col gap-2 text-center text-sm font-medium">
             Days
             <div class="flex size-16 items-center justify-center rounded-md border-2 text-xl font-medium" id="days">
-                12
+                00
             </div>
         </div>
         <div class="flex flex-col gap-2 text-center text-sm font-medium">
             Hours
             <div class="flex size-16 items-center justify-center rounded-md border-2 text-xl font-medium" id="hours">
-                10
+                00
             </div>
         </div>
 
         <div class="flex flex-col gap-2 text-center text-sm font-medium">
             Minutes
             <div class="flex size-16 items-center justify-center rounded-md border-2 text-xl font-medium" id="minutes">
-                10
+                00
             </div>
         </div>
 
         <div class="flex flex-col gap-2 text-center text-sm font-medium">
             Seconds
             <div class="flex size-16 items-center justify-center rounded-md border-2 text-xl font-medium" id="seconds">
-                10
+                00
             </div>
         </div>
 
-        <div class="flex flex-col gap-2 text-center text-sm font-medium">
-            Miliseconds
-            <div class="flex size-16 items-center justify-center rounded-md border-2 text-xl font-medium"
-                id="miliseconds">
-                10
-            </div>
-        </div>
+
+    </div>
+    <div class="flex items-center gap-2">
+        <button id="reset"
+            class="text-white p-4 cursor-pointer h-8 rounded-md bg-fuchsia-600 justify-center flex items-center gap-2">Reset
+            timer</button>
+        <button id="stop"
+            class="text-white p-4 cursor-pointer h-8 rounded-md bg-pink-600 justify-center flex items-center gap-2">Stop
+            timer</button>
     </div>
     <script type="module" src="/src/main.js"></script>
 </body>

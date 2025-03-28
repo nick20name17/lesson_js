@@ -18,10 +18,10 @@ function getCurrentDateInfo() {
 
 const currentDateInfo = getCurrentDateInfo()
 
-console.log(now.toDateString())
-console.log(now.toISOString())
-console.log(now.toLocaleDateString())
-console.log(now.toLocaleTimeString())
-console.log(now.toLocaleString())
+console.log(myDate.toDateString())
+console.log(myDate.toISOString())
+console.log(myDate.toLocaleDateString())
+console.log(myDate.toLocaleTimeString())
+console.log(myDate.toLocaleString())
 
 initTimer()
