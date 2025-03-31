@@ -1,3 +1,5 @@
+import { showToast } from './toast'
+
 export function initTimer() {
     const daysBlock = document.getElementById('days')
     const hoursBlock = document.getElementById('hours')
@@ -30,7 +32,10 @@ export function initTimer() {
         secondsBlock.textContent = '00'
     }
 
-    resetBtn.addEventListener('click', resetTimer)
+    resetBtn.addEventListener('click', () => {
+        resetTimer()
+        showToast('Timer reset')
+    })
 
     function startTimer(minutes) {
         resetTimer()
@@ -51,6 +56,7 @@ export function initTimer() {
     }
 
     function stopTimer() {
+        showToast('Timer stopped')
         clearInterval(timer)
     }
 
