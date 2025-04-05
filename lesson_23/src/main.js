@@ -28,21 +28,21 @@
 // console.log(res)
 
 // GET
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => {
-        return response.json()
-    })
-    .then((data) => {
-        const ul = document.createElement('ul')
-        data.forEach((item) => {
-            const li = document.createElement('li')
-            li.textContent = `${item.name} - ${item.email}`
-            li.classList.add('bg-blue-500', 'text-white', 'p-2', 'm-2', 'rounded-lg')
-            ul.appendChild(li)
-        })
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then((response) => {
+//         return response.json()
+//     })
+//     .then((data) => {
+//         const ul = document.createElement('ul')
+//         data.forEach((item) => {
+//             const li = document.createElement('li')
+//             li.textContent = `${item.name} - ${item.email}`
+//             li.classList.add('bg-blue-500', 'text-white', 'p-2', 'm-2', 'rounded-lg')
+//             ul.appendChild(li)
+//         })
 
-        document.body.appendChild(ul)
-    })
+//         document.body.appendChild(ul)
+//     })
 
 // fetch('https://jsonplaceholder.typicode.com/posts/5', {
 //     method: 'PATCH',
@@ -55,23 +55,23 @@ fetch('https://jsonplaceholder.typicode.com/users')
 //     method: 'DELETE',
 // })
 
-const postBtn = document.getElementById('post-btn')
+// const postBtn = document.getElementById('post-btn')
 
-const addPost = (title, body) => {
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-            title,
-            body,
-        }),
-    })
-}
+// const addPost = (title, body) => {
+//     fetch('https://jsonplaceholder.typicode.com/posts', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             title,
+//             body,
+//         }),
+//     })
+// }
 
-postBtn.addEventListener('click', () => {
-    const title = prompt('Enter post title')
-    const body = prompt('Enter post body')
-    addPost(title, body)
-})
+// postBtn.addEventListener('click', () => {
+//     const title = prompt('Enter post title')
+//     const body = prompt('Enter post body')
+//     addPost(title, body)
+// })
 
 // console.log('hello')
 
@@ -101,19 +101,47 @@ postBtn.addEventListener('click', () => {
 //         console.log(error)
 //     })
 
-async function getUsers() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+// async function getUsers() {
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-        if (!response.ok) {
-            throw new Error('Something went wrong')
-        }
+//         if (!response.ok) {
+//             throw new Error('Something went wrong')
+//         }
 
-        const data = await response.json()
-        console.log(data)
-    } catch (error) {
-        console.log(error)
-    }
+//         const data = await response.json()
+//         console.log(data)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// getUsers()
+
+// fetch('https://uselessfacts.jsph.pl/api/v2/facts/random')
+//     .then((response) => {
+//         return response.json()
+//     })
+//     .then((data) => {
+//         console.log(data)
+//     })
+
+const getFactBtn = document.querySelector('#fact-btn')
+const factContainer = document.querySelector('#fact-container')
+const fact = document.querySelector('#fact')
+
+async function renderRandomFact() {
+    fact.innerHTML = ''
+    const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random')
+    const data = await response.json()
+
+    const p = document.createElement('p')
+    p.textContent = data.text
+    p.classList.add('text-center', 'max-w-96', 'leading-snug', 'text-lg')
+
+    fact.appendChild(p)
 }
 
-getUsers()
+renderRandomFact()
+
+getFactBtn.addEventListener('click', renderRandomFact)
