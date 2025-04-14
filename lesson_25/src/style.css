@@ -1,0 +1,155 @@
+:root {
+    --bg-clr: #fff;
+    --accent-clr: hotpink;
+    --secondary-clr: rgba(255, 233, 244);
+    --input-clr: white;
+    --li-clr: rgba(255, 233, 244, 0.75);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: var(--bg-clr);
+}
+
+.form {
+    border-radius: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.input-group {
+    display: flex;
+    height: 40px;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px 0px 0px 8px;
+    border: 1px solid black;
+    border-right: none;
+    background-color: var(--input-clr);
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--secondary-clr);
+}
+
+.submit-btn {
+    background-color: var(--accent-clr);
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: var(--secondary-clr);
+    width: 120px;
+    height: 100%;
+}
+
+.submit-btn:hover {
+    background-color: tomato;
+}
+
+.task-list {
+    margin-top: 12px;
+    width: 400px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input[type='checkbox'] {
+    accent-color: tomato;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--li-clr);
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--accent-clr);
+    transition: opacity 0.3 ease-in-out;
+}
+
+.completed {
+    opacity: 0.5;
+}
+
+.completed span {
+    text-decoration: line-through;
+}
+
+.delete-btn {
+    background-color: var(--accent-clr);
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: var(--secondary-clr);
+    width: 60px;
+    font-size: 14px;
+    height: 24px;
+}
+
+.delete-btn:hover {
+    background-color: tomato;
+}
+
+.empty-message {
+    text-align: center;
+    background-color: var(--li-clr);
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--accent-clr);
+}
+
+.filters-list {
+    margin-top: 24px;
+    list-style-type: none;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.filter-item {
+    height: 100%;
+}
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 99, 71, 0.1);
+    color: tomato;
+    font-size: 12px;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    padding: 6px 12px;
+}
+
+.active {
+    background-color: tomato;
+    color: var(--secondary-clr);
+}

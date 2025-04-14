@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Todo</title>
+</head>
+
+<body>
+
+  <form class="form" autocomplete="off">
+    <div class="input-group">
+      <input class="input" type="text" id="task" placeholder="Do a homework...">
+      <button class="submit-btn" type="submit">Submit</button>
+    </div>
+  </form>
+
+  <ul class="filters-list">
+    <li class="filter-item">
+      <button id="all" class="filter-btn active">All</button>
+    </li>
+    <li class="filter-item">
+      <button id="completed" class="filter-btn">Completed</button>
+    </li>
+    <li class="filter-item">
+      <button id="not-completed" class="filter-btn">Not Completed</button>
+    </li>
+  </ul>
+
+  <ul class="task-list">
+
+  </ul>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
