@@ -1,0 +1,38 @@
+body {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+
+    text-align: center;
+    cursor: pointer;
+}
+.default {
+    background-color: tomato;
+    color: #242424;
+    border: none;
+}
+
+.outline {
+    background-color: transparent;
+    border: 1px solid tomato;
+    color: tomato;
+}
