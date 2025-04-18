@@ -1,6 +1,4 @@
-import { Counter } from './counter'
-import { Greeting } from './greeting'
-import { ItemList } from './item-list'
+import { ReactHookForm } from './react-hook-form'
 
 export const App = () => {
     const handleClick = () => {
@@ -8,9 +6,11 @@ export const App = () => {
     }
     return (
         <>
-            <Greeting name="Mark" />
+            {/* <Greeting name="Mark" />
             <Counter />
-            <ItemList />
+            <ItemList /> */}
+            {/* <Form /> */}
+            <ReactHookForm />
         </>
     )
 }
