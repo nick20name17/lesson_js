@@ -3,6 +3,7 @@ import { Layout } from './components/layout'
 import { About } from './pages/about'
 import { Home } from './pages/home'
 import { NotFound } from './pages/not-found'
+import { Profile } from './pages/profile'
 import { User } from './pages/user'
 import { Users } from './pages/users'
 
@@ -16,7 +17,10 @@ export const App = () => {
                     index: true,
                     element: <Home />,
                 },
-                ,
+                {
+                    path: '/profile',
+                    element: <Profile />,
+                },
                 {
                     path: '/about',
                     element: <About />,
@@ -29,11 +33,11 @@ export const App = () => {
                     path: '/users/:id',
                     element: <User />,
                 },
+                {
+                    path: '*',
+                    element: <NotFound />,
+                },
             ],
-        },
-        {
-            path: '*',
-            element: <NotFound />,
         },
     ])
 
